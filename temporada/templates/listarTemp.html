@@ -1,0 +1,43 @@
+{% extends 'basepageTemp.html' %}
+
+{% block contentT %}
+
+<div class="container"> 
+    <div class="row">
+        <div class="col-sm-1"></div>
+            <div class="col-sm-10 fundot">
+                <div style="text-align: center;"><h1 class="txtB">Temporadas {{seriado.nome}}</h1>
+                    <p><a href="/seriados/{{seriado.id}}/temporadas/novo" class="btn btn-success btn-sm">Criar Novo</a></p>
+                    <p><a href="/seriados" class="btn btn-warning btn-sm">Voltar</a></p>
+                </div>
+                <table>
+                    <tr> 
+                    {% for temporada in temporadas %}
+                        <td style="float:left">
+                            <div>
+                                <div class="item fundot">
+                                        <div class="temporada txtB" style="text-align: center;"><h4>{{temporada.numero}}ª temporada</h4></div>
+                                            {% if temporada.imagemFile.url != '/media/%23' %}
+                                                <div><img class="imgT" src="{{temporada.imagemFile.url}}" alt="{{seriado.nome}}"></div>
+                                            {% else %}
+                                                 <div><img class="imgT" src="/media/noImage.png" alt="{{seriado.nome}}"></div>
+                                            {% endif %}
+                                        </a>
+                                    <a style="float:left" href="/seriados/{{seriado.id}}/temporadas/{{temporada.id}}" class="btn btn-success btn-sm">Editar</a>
+                                   
+                                    <form style="float:left"  method="post" action="/seriados/{{seriado.id}}/temporadas/delete/{{temporada.id}}"  
+                                        onsubmit="return confirm('Tem certeza que deseja remover essa temporada?')">
+                                        {% csrf_token %} 
+                                        <button class="btn btn-danger btn-sm mr-2">X</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </td>
+                    {% endfor %}
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

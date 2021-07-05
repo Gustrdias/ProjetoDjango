@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/09/2020, 21:41:50
+    Author     : GustForever
+*/
+
+
+.item {
+    float: left;
+    padding: 3px;
+  }
+  .imgT{ 
+     height: 225px;
+     width: 150px;
+  }
+  
+  .formulario{
+      background: rgba(0, 0, 0, 0.7);
+      border-width: 2px; 
+      border-style: solid; 
+      text-align: center;
+     
+  }
+  .txtB{
+      color: white;
+  }
+  .borda{
+      border-bottom: 4px dotted blue;
+  }
+  .bordaF{
+      border-width: 2px; 
+      border-style: solid; 
+      
+  }
+  .ita{
+      font-style: italic;
+  }
+  .serie-image{
+      width: 150px;
+      height: 150px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+  }
+  .fundot{
+      background: rgba(0, 0, 0, 0.7);
+  }
+  .fundoTop{
+      margin-bottom: 0px;
+      background-size: cover;
+      background-position: 50% 30%;
+      padding: 70px 0;
+  }

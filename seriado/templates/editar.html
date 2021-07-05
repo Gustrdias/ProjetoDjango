@@ -1,0 +1,50 @@
+{% extends 'basepage.html' %}
+
+{% block content %}
+
+<div class="ibox-title">
+    {% if seriado %}
+        <h5>Editar Seriado</h5>
+    {% else %}
+        <h5>Criar Seriado</h5>
+    {% endif %}
+</div>
+<div class="ibox-content">
+    <div class="row">
+        <div class="col-sm-3"></div>
+	<div class="col-sm-6 formulario">
+        <br>
+        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group"><label class="col-sm-2 control-label txtB">Nome</label>
+                <div class="col-sm-6"> {{ form.nome }} </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group"><label class="col-sm-2 control-label txtB">Genero</label>
+                <div class="col-sm-2"> {{ form.genero }} </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group"><label class="col-sm-2 control-label txtB">Avaliação</label>
+                <div class="col-sm-10"> {{ form.avaliacao }} </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group"><label class="col-sm-2 control-label txtB">Assistido</label>
+                <div class="col-sm-2"> {{ form.assistido }} </div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label txtB">Imagem File</label>
+                <div class="col-sm-7"> {{ form.imagemFile }} </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="{{user.id}}" name="user_id" style="display : none" />
+            </div>
+            {% if seriado %}
+                <input class="btn btn-primary" type="submit" value="Atualizar">
+            {% else %}
+                <input class="btn btn-primary" type="submit" value="Criar">
+            {% endif %}
+        </form>
+        <br>
+        <a class="btn btn-warning mt-2"  href="/seriados">Voltar</a><br>
+    </div>
+</div>
+{% endblock %}

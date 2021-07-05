@@ -1,0 +1,40 @@
+{% extends 'basepage.html' %}
+
+{% block content %}
+
+<div class="container" style="display: block;">
+    <div class="row">
+	<div class="col-sm-1"></div>
+        <div class="col-sm-10 fundot">
+            <div style="text-align: center;"><h1 class="txtB">Lista de Séries</h1>
+                <p><a href="/seriados/novo" class="btn btn-success btn-sm">Criar Novo</a></p>
+            </div>
+            {% for serie in seriados %}
+                <div class="row" style=" border-width:1px; border-style:solid; ">
+                    <div class="col-sm-3 serie-image bordaF" style="background-image: url('{{serie.imagemFile.url}}');" ></div>
+                    <div class="col-sm-3 txtB" >
+                        <div><h2>{{serie.nome}}</h2></div>
+                        <div><h5>Genero: {{serie.genero}}</h5></div>   
+                    </div>
+                    <div class="col-sm-2" style="text-align: center;">
+                        <div class='borda txtB'><p>Assistido</p><h4>{{serie.assistido}}</h4></div>
+                        <p class='ita txtB'>Nota</p><h2 style="color : gold;">{{serie.avaliacao}}/100</h2>
+                    </div>
+                    <div class="col-sm-3" style="top: 40px; left: 70px;" >
+                        <a href="/seriados/{{serie.id}}/temporadas" class="btn btn-warning btn-sm ">Detalhes</a>       
+                    </div>
+                    <div class="col-sm-1" style="top: 30px;">
+                        <div><p><a  href="/seriados/{{serie.id}}" class="btn btn-success btn-sm">Editar</a></p>      
+                            <form method="post" action="/seriados/delete/{{serie.id}}"
+                                onsubmit="return confirm('Tem certeza que deseja remover essa série?')">
+                                <button class="btn btn-danger btn-sm btn-sm mr-2">Remover</button>
+                            </form>
+                        </div>  
+                </div>
+                </div><br>
+            {% endfor %}
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+{% endblock %}
