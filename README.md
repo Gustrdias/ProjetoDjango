@@ -4,17 +4,17 @@ O projeto foi baseado no projeto anterior feito em laravel, que foi uma lista de
 nesse projeto ele ficou mais enxuto que o projeto do laravel, realiza duas ações salva a serie e suas temporadas
 
 A url inicial é /seriados/ caso não esteja logado vai redirecioná-lo para a página de login
-Login ADM
+Login ADM=
 gust
-Senha
+Senha=
 1234
 
 criado um usuario teste
-Nome
+Nome=
 ze
-Senha
+Senha=
 palavrachave
 
 Obs: Adicionei também uma lista de séries no ADM gust 
 
-para adicionar novos usuarios só atravez do /admin
+para adicionar novos usuarios só atraves do /admin
